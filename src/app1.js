@@ -1,16 +1,16 @@
 
 import Nav from "./nav"
-
+import Main from "./main"
 
 
 
 const app = ()=>{
 
- return(
+  return(
         <>
           
-          <Nav/>
-
+          <Nav nombre="Julian" apellido="Ponce"/>
+          <Main/>
         </>
   
   )

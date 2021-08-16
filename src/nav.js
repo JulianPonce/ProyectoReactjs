@@ -1,13 +1,17 @@
-const nav =()=>{
+import CardWidget from "./cardWidget"
+
+const nav =({nombre,apellido})=>{
 
     return(
-        <header>
-           <h1>e-commerce</h1>
-           <nav class="navbar navbar-dark bg-dark">
-                <form class="container-fluid justify-content-center">
+        <header id = "header">
+       
+           <nav class="navbar ">
+                     <h1>e-commerce</h1>
                         <button class="btn btn-outline-success me-2" type="button">categoraias</button>
                         <button class="btn btn-outline-success me-2" type="button">contacto</button>
-                </form>
+                        <p>Hola {nombre} {apellido}</p>
+                        <CardWidget/>
+           
            </nav>
            
       

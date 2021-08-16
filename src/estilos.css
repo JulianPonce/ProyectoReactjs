@@ -3,6 +3,19 @@ body{
 }
 
 h1{
-    background-color: black;
+    
     color: aliceblue;
+}
+#header{
+    background-color: black;
+    box-shadow: 3px;
+}
+nav p{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+i{
+    color: rgb(255, 255, 255);
+   font-size: 30px;
 }
