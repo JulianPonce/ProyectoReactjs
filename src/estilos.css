@@ -1,21 +1,22 @@
-body{
+body {
     background-color: brown;
 }
 
-h1{
-    
+h1 {
     color: aliceblue;
 }
-#header{
+
+#header {
     background-color: black;
     box-shadow: 3px;
 }
-nav p{
+
+nav p {
     color: #ffffff;
     font-size: 20px;
 }
 
-i{
+i {
     color: rgb(255, 255, 255);
-   font-size: 30px;
+    font-size: 30px;
 }

@@ -1,4 +1,4 @@
-import CardWidget from "./cardWidget"
+import CartWidget from "./cartWidget"
 
 const nav =({nombre,apellido})=>{
 
@@ -6,11 +6,11 @@ const nav =({nombre,apellido})=>{
         <header id = "header">
        
            <nav class="navbar ">
-                     <h1>e-commerce</h1>
+                        <h1>e-commerce</h1>
                         <button class="btn btn-outline-success me-2" type="button">categoraias</button>
                         <button class="btn btn-outline-success me-2" type="button">contacto</button>
                         <p>Hola {nombre} {apellido}</p>
-                        <CardWidget/>
+                        <CartWidget/>
            
            </nav>
            

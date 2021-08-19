@@ -1,8 +1,8 @@
-const CardWidget = () => {
+const CartWidget = () => {
     return (
 
         <i class="fas fa-cart-arrow-down "></i>
       );
 }
  
-export default CardWidget;
+export default CartWidget;
