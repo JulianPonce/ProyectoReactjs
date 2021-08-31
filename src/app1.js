@@ -3,7 +3,7 @@ import Nav from "./nav"
 
 import ItemListContainer from "./componentes/itemListContainer"
 
-
+import ItemDetailContainer from "./componentes/itemDetailContainer"
 
 const app = ()=>{
  
@@ -18,8 +18,8 @@ const app = ()=>{
                 
                 <ItemListContainer/>
                 
-              </>
-        
+                <ItemDetailContainer/>
+                </>
         )
 }
 
