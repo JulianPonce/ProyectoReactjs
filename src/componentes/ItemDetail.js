@@ -2,7 +2,7 @@ const ItemDetail = ({element}) => {
 
 
     return(
-        <li>{element.categoría}</li>
+        <li>{element.categoria}</li>
     )
 
 }

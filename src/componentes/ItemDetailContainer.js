@@ -1,6 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import ItemDetail from './ItemDetail'
-import React, { useEffect, useState } from 'react'
+import ItemDetail from "./ItemDetail"
+import React, { useEffect, useState } from "react"
 
 
 
