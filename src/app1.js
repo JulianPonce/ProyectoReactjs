@@ -1,26 +1,28 @@
-
+import { useState } from "react"
 import Nav from "./nav"
-
 import ItemListContainer from "./componentes/itemListContainer"
-
 import ItemDetailContainer from "./componentes/ItemDetailContainer"
-
-const app = ()=>{
- 
+import { BrowserRouter,Route,Switch } from 'react-router-dom'
 
 
-      return(
-              <>
-                
-                <Nav nombre="Julian" apellido="Ponce"/>
-                
-                
-                
-                <ItemListContainer/>
-                
-                <ItemDetailContainer/>
-                </>
-        )
+
+const app = () => {
+
+
+
+    return ( 
+        <BrowserRouter>
+
+        <Nav/>
+       
+        <Switch>
+        <Route path="/" component={ItemListContainer} exact/>
+        <Route path="/categoria/:id" component={ItemListContainer}/>
+        <Route path="/item/:id" component={ItemDetailContainer}/>
+        </Switch>
+        
+        </BrowserRouter>
+    )
 }
 
 export default app

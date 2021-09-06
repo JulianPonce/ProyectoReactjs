@@ -1,4 +1,6 @@
 import CartWidget from "./cartWidget"
+import { Link } from "react-router-dom"
+
 
 const nav =({nombre,apellido})=>{
 
@@ -6,10 +8,13 @@ const nav =({nombre,apellido})=>{
         <header id = "header">
        
            <nav class="navbar ">
+                       
+                       <Link to="/">
                         <h1>e-commerce</h1>
-                        <button class="btn btn-outline-success me-2" type="button">categoraias</button>
-                        <button class="btn btn-outline-success me-2" type="button">contacto</button>
-                        <p>Hola {nombre} {apellido}</p>
+                        </Link>
+                        <Link to="/categoria1">categoria 1</Link>
+                        <Link to="/categoria2">categoria 2</Link>
+                   
                         <CartWidget/>
            
            </nav>
