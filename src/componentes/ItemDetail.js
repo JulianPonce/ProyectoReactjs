@@ -2,7 +2,7 @@ const ItemDetail = ({element}) => {
 
 
     return(
-        <li>{element.categoria}</li>
+        <li key={element.id}>{element.categoria} {element.precio}$</li>
     )
 
 }

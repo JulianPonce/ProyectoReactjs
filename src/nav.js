@@ -12,8 +12,8 @@ const nav =({nombre,apellido})=>{
                        <Link to="/">
                         <h1>e-commerce</h1>
                         </Link>
-                        <Link to="/categoria1">categoria 1</Link>
-                        <Link to="/categoria2">categoria 2</Link>
+                        <Link to="/gorra">categoria 1</Link>
+                        <Link to="/campera">categoria 2</Link>
                    
                         <CartWidget/>
            
