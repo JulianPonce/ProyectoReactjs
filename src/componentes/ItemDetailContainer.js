@@ -37,7 +37,7 @@ const  ItemDetailContainer = ()=>{
 
         useEffect(()=>{
             PromiseEjercicio().then(res=>setItem(res.find(element=>element.id===id)))
-        },[])
+        },[id])
 
             return(
 

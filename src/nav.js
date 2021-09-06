@@ -12,9 +12,10 @@ const nav =({nombre,apellido})=>{
                        <Link to="/">
                         <h1>e-commerce</h1>
                         </Link>
-                        <Link to="/gorra">categoria 1</Link>
-                        <Link to="/campera">categoria 2</Link>
-                   
+                        <Link to="/categoria/remera">remera</Link>
+                        <Link to="/categoria/pantalon">pantalon</Link>
+                        <Link to="/categoria/campera">campera</Link>
+                        <Link to="/categoria/gorra">gorra</Link>
                         <CartWidget/>
            
            </nav>
