@@ -44,10 +44,13 @@ const promiseEjercicio = () =>{
 
   return (
         <>
-           <ItemList element={element}/>
-          <ItemCount stock={4} initial={1} onAdd={(contador)=>{console.log(contador);}}/>
+          
+          <ItemList element={element}/>
+          
         
-         </>
+         
+
+        </>
       );
 }
  
