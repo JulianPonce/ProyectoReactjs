@@ -6,6 +6,10 @@ h1 {
     color: aliceblue;
 }
 
+section .contenido {
+    font-size: 30px;
+}
+
 #header {
     background-color: black;
     box-shadow: 3px;

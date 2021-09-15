@@ -41,11 +41,10 @@ const  ItemDetailContainer = ()=>{
 
             return(
 
-                    <>
-
+                    
                     <ItemDetail element={item}/>
 
-                    </>
+              
 
                     )
 
