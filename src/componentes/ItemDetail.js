@@ -1,12 +1,12 @@
 import ItemCount from "./itemCount";
 import { useContext, useState } from "react";
-import {Contexto} from "../contexto/CartContext";
+import {contexto} from "../contexto/CartContext";
 
 
 const ItemDetail = ({producto}) => {
     
     const [finish, setFinish] = useState(false)
-    const {agregarAlCarro} = useContext(Contexto)
+    const {agregarAlCarro} = useContext(contexto)
     
 
 

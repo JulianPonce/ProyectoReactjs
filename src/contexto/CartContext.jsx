@@ -2,16 +2,16 @@ import { createContext, useState } from "react";
 
 export const contexto = createContext()
 
-const {provider} = contexto
+export const { Provider } = contexto
 
-const CustomProvider = (children) => {
+const CustomProvider = ({children}) => {
 
     const [carrito,setCarrito] = useState([])
     
     
     
     
- const agregarAlCarro = (producto,cantidad) =>{
+    const agregarAlCarro = (producto,cantidad) =>{
         
     
     if(isInCart(producto.id)){
@@ -27,37 +27,40 @@ const CustomProvider = (children) => {
             setCarrito([...carrito,producto])
         }
     
-}
+    }
 
-const eliminarProducto = (productoid) => {
+         
+    const eliminarProducto = (productoid) => {
+    
+        const carritoFilter = carrito.filter(producto => producto.item.id !== productoid)
+        return setCarrito(carritoFilter)
+
+    }
+
+
+    const isInCart = (id)=>{
+
+        return carrito.find(producto=>producto.id === id)
+    }
+
+    const clear = () =>{
+
+        setCarrito([])
+
+    }
+    
+    
+    const precioTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad * element.item.precio), 0)
    
-    const carritoFilter = carrito.filter(producto => producto.item.id !== productoid)
-    return setCarrito(carritoFilter)
-
-}
-
-
-const isInCart = (id)=>{
-
-    return carrito.find(producto=>producto.id === id)
-}
-
-const clear = () =>{
-
-       setCarrito([])
-
-}
-const contexto = {
-    carrito,agregarAlCarro
-}
-   
+    console.log(precioTotal);
+         
     
     return(
-                    <provider valur={contexto,clear,eliminarProducto}>
+                    <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal}}>
                     {children}
-                    </provider>
+                    </Provider>
                     )
 
 }
 
-export default CustomProvider()
+export default CustomProvider
