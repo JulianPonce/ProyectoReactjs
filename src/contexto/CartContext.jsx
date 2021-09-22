@@ -49,6 +49,9 @@ const CustomProvider = ({children}) => {
 
     }
     
+    const cantidadTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad), 0)
+    
+    console.log(cantidadTotal());
     
     const precioTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad * element.item.precio), 0)
    
@@ -56,7 +59,7 @@ const CustomProvider = ({children}) => {
          
     
     return(
-                    <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal}}>
+                    <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal,cantidadTotal}}>
                     {children}
                     </Provider>
                     )

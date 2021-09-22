@@ -8,7 +8,7 @@ const  ItemDetailContainer = ()=>{
 
     
 
-    const [producto, setProducto] = useState({})
+    const [element, setElement] = useState({})
 
     const {id} = useParams();
 
@@ -36,14 +36,14 @@ const  ItemDetailContainer = ()=>{
     };
 
         useEffect(()=>{
-            PromiseEjercicio().then(res=>setProducto(res.find(element=>element.id===id)))
+            PromiseEjercicio().then(res=>setElement(res.find(element=>element.id===id)))
         },[id])
 
             return(
 
-                    
-                    <ItemDetail producto={producto}/>
-
+                    <>
+                    <ItemDetail element={element}/>
+                    </> 
               
 
                     )

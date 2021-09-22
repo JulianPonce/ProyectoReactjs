@@ -2,9 +2,12 @@ import CartWidget from "./cartWidget"
 import { Link } from "react-router-dom"
 
 
-const nav =({nombre,apellido})=>{
-
-    return(
+const nav =({carrito})=>{
+    
+  
+    
+  
+  return(
         <header id = "header">
        
            <nav class="navbar ">
