@@ -11,15 +11,15 @@ const CustomProvider = ({children}) => {
     
     
     
-    const agregarAlCarro = (producto,cantidad) =>{
+    const agregarAlCarro = (producto) =>{
         
     
     if(isInCart(producto.id)){
-        const upDateCart = [...producto];
+        const upDateCart = [...carrito];
            
-        upDateCart.forEach((producto)=>{
-           if(producto.item.id === producto.id){
-            producto.cantidad += cantidad
+        upDateCart.forEach((element)=>{
+           if(producto.id === element.id){
+            element.cantidad += producto.cantidad
            }
 
         })
@@ -28,11 +28,12 @@ const CustomProvider = ({children}) => {
         }
     
     }
-
+    
+    
          
     const eliminarProducto = (productoid) => {
     
-        const carritoFilter = carrito.filter(producto => producto.item.id !== productoid)
+        const carritoFilter = carrito.filter(producto => producto.id !== productoid)
         return setCarrito(carritoFilter)
 
     }
@@ -51,17 +52,16 @@ const CustomProvider = ({children}) => {
     
     const cantidadTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad), 0)
     
-    console.log(cantidadTotal());
     
-    const precioTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad * element.item.precio), 0)
+    
+    const precioTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad * element.precio), 0)
    
-    console.log(precioTotal);
-         
+    console.log('carrito',carrito)
     
     return(
-                    <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal,cantidadTotal}}>
-                    {children}
-                    </Provider>
+          <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal,cantidadTotal}}>
+          {children}
+          </Provider>
                     )
 
 }
