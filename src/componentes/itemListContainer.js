@@ -24,7 +24,7 @@ const promiseEjercicio = () =>{
               { id: "7", destacado: false, categoria: "campera", precio: "3000" },
               { id: "8", destacado: true, categoria: "gorra", precio: "450" },           
             ])
-      },3000);
+      },[category]);
   
   })
 };

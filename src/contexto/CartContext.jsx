@@ -21,15 +21,14 @@ const CustomProvider = ({children}) => {
            if(producto.id === element.id){
             element.cantidad += producto.cantidad
            }
-
+           setCarrito(upDateCart)
         })
         }else{
             setCarrito([...carrito,producto])
         }
-    
+    console.log(carrito);
     }
-    
-    
+
          
     const eliminarProducto = (productoid) => {
     
@@ -50,19 +49,25 @@ const CustomProvider = ({children}) => {
 
     }
     
-    const cantidadTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad), 0)
+    const cantidadTotal = () =>
+        carrito.reduce((acum, element) => (acum += element.cantidad), 
+        0)
+  
     
-    
-    
-    const precioTotal = () => carrito.reduce((acum, element) => (acum += element.cantidad * element.precio), 0)
+    const precioTotal = () =>
+        carrito.reduce((acum, element) => (acum += element.cantidad * element.precio), 
+        0)
    
-    console.log('carrito',carrito)
+    console.log(precioTotal());
+
+    
+         
     
     return(
-          <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal,cantidadTotal}}>
-          {children}
-          </Provider>
-                    )
+             <Provider value={{ carrito,agregarAlCarro,clear,eliminarProducto,precioTotal,cantidadTotal}}>
+             {children}
+             </Provider>
+             )
 
 }
 

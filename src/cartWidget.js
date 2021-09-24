@@ -9,9 +9,9 @@ const CartWidget = () => {
     const {cantidadTotal} = useContext(contexto)
     return (
      <>
-      <Link to = {"carrito"}> 
+     <Link to ="/carrito">
       {cantidadTotal()}
-      <button class="fas fa-cart-arrow-down "></button>
+      <button class="fas fa-cart-arrow-down"></button>
       </Link>
       
      </>
