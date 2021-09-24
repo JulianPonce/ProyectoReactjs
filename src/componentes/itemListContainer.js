@@ -2,16 +2,21 @@ import { useEffect, useState } from 'react';
 import ItemCount from "./itemCount";
 import ItemList from  "./itemList";
 import {useParams} from "react-router-dom";
-
+import { firestore } from '../firebase';
 
 const ItemListContainer = () => {
   
+console.log(firestore);
+
+
   const [element,setElement]=useState([])
   const {category} = useParams()
     
   
-const promiseEjercicio = () =>{
-    return new Promise((resolver, reject) => {
+ const promiseEjercicio = () =>{
+   
+  
+  return new Promise((resolver, reject) => {
   
       setTimeout(()=>{
           resolver([
@@ -38,11 +43,6 @@ const promiseEjercicio = () =>{
     })  
   },[category])
     
-
-
-
-
-
   return (
         <>
           
