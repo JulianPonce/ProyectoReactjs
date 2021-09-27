@@ -3,13 +3,14 @@ import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
 import {Link} from 'react-router-dom'
 
-const ItemDetail = ({ element,item }) => {
+const ItemDetail = ({ element,productoAgregado }) => {
+  
   const [finish, setFinish] = useState(false);
   const { agregarAlCarro } = useContext(contexto);
 
   const onAdd = (contador) => {
-    const item = { ...element, cantidad: contador };
-    agregarAlCarro(item);
+    const productoAgregado = { ...element, cantidad: contador };
+    agregarAlCarro(productoAgregado);
 
     alert("se agregaron" + contador + "productos");
     
@@ -17,9 +18,10 @@ const ItemDetail = ({ element,item }) => {
  
   return (
     <div>
-      <h1 key={element.id}>
-        {element.titulo} {element.precio}$
-      </h1>
+      <div> {element.imagenUrl}</div>
+      <div key={element.id}>
+        <h1> {element.titulo} {element.precio}$</h1>
+      </div>
      
       {finish === true ? (
         <button><Link to="/carrito"> Ir al carrito </Link></button>

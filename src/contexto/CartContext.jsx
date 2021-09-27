@@ -11,22 +11,22 @@ const CustomProvider = ({children}) => {
     
     
     
-    const agregarAlCarro = (producto) =>{
+    const agregarAlCarro = (productoAgregado) =>{
         
     
-    if(isInCart(producto.id)){
-        const upDateCart = [...carrito];
-           
-        upDateCart.forEach((element)=>{
-           if(producto.id === element.id){
-            element.cantidad += producto.cantidad
-           }
-           setCarrito(upDateCart)
-        })
-        }else{
-            setCarrito([...carrito,producto])
-        }
-    console.log(carrito);
+            if(isInCart(productoAgregado.id)){
+                const upDateCart = [...carrito];
+                
+                upDateCart.forEach((element)=>{
+                if(productoAgregado.id === element.id){
+                    element.cantidad += productoAgregado.cantidad
+                }
+                setCarrito(upDateCart)
+                })
+                }else{
+                    setCarrito([...carrito,productoAgregado])
+                }
+            console.log(carrito);
     }
 
          
