@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
 import {Link} from 'react-router-dom'
 
-const ItemDetail = ({ element }) => {
+const ItemDetail = ({ element,item }) => {
   const [finish, setFinish] = useState(false);
   const { agregarAlCarro } = useContext(contexto);
 
@@ -18,7 +18,7 @@ const ItemDetail = ({ element }) => {
   return (
     <div>
       <h1 key={element.id}>
-        {element.categoria} {element.precio}$
+        {element.titulo} {element.precio}$
       </h1>
      
       {finish === true ? (

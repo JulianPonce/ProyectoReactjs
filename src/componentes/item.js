@@ -6,7 +6,8 @@ const Item = ({element}) => {
 
    return(
       <>
-         <li key={element.id}>{element.categoria} {element.precio}$</li>
+      <div>{element.imagenUrl}</div>
+         <li key={element.id}>{element.titulo} {element.precio}$</li>
          <Link to={`/item/${element.id}`}>ver mas</Link>
       </>
    )

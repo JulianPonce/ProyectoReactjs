@@ -6,42 +6,60 @@ import { firestore } from '../firebase';
 
 const ItemListContainer = () => {
   
-console.log(firestore);
+
 
 
   const [element,setElement]=useState([])
-  const {category} = useParams()
-    
+ 
+  const {id} = useParams()
   
- const promiseEjercicio = () =>{
-   
-  
-  return new Promise((resolver, reject) => {
-  
-      setTimeout(()=>{
-          resolver([
-              { id: "1", destacado: true, categoria: "remera", precio: "800" },
-              { id: "2", destacado: true, categoria: "pantalon", precio: "1200" },
-              { id: "3", destacado: false, categoria: "campera", precio: "3000" },
-              { id: "4", destacado: true, categoria: "gorra", precio: "450" }, 
-              { id: "5", destacado: true, categoria: "remera", precio: "800" },
-              { id: "6", destacado: true, categoria: "pantalon", precio: "1200" },
-              { id: "7", destacado: false, categoria: "campera", precio: "3000" },
-              { id: "8", destacado: true, categoria: "gorra", precio: "450" },           
-            ])
-      },[category]);
-  
-  })
-};
+ 
 
   useEffect(()=>{    
-    promiseEjercicio().then(res=>{
-      if(!category){setElement(res)}
-      else{let filtrar=res.filter(element=>element.categoria===category)
+   
+   
+    const db = firestore
+    const collection = firestore.collection("Productos")
+
+    const query = collection.get()
+   
+   
+   
+   
+    query.then((snapshot)=>{
+             
+      
+      setElement(snapshot.docs.map(doc=>({...doc.data(),id:doc.id})))
+      
+      //const docs = snapshot.docs
+
+      //const Productos = []
+
+   /*docs.forEach((doc)=>{
+
+        const docSnapshot = doc
+        //console.log(docSnapshot.id);
+        //console.log(docSnapshot.data());
+          const Producto_id = {...docSnapshot.data(),id:docSnapshot.id}
+          Productos.push(Producto_id)
+      })*/
+
+          //setElement(Productos);
+    })
+   
+   
+   
+   
+   
+   
+   
+    /*promiseEjercicio().then(res=>{
+      if(!categoria){setElement(res)}
+      else{let filtrar=res.filter(element=>element.categoria===categoria)
       setElement(filtrar) 
      }
-    })  
-  },[category])
+    })*/  
+  },[id])
     
   return (
         <>
