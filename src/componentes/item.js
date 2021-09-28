@@ -14,14 +14,14 @@ const Item = ({element}) => {
    <>
 <div >
    
- <Row xs={4} md={4} className="g-4">
+<Row xs={1} md={2} className="g-4">
   {Array.from({ length: 1 }).map((_, idx) => (
     <Col>
-      <Card>
-        <Card.Img variant="top" src={element.imagenUrl}/>
+      <Card border="dark" style={{ width: '18rem' }}>
+        <Card.Img  variant="top" src={element.imagenUrl}/>
         <Card.Body>
           <Card.Title>{element.titulo}</Card.Title>
-          <Card.Text>
+          <Card.Text border="dark"> 
           Precio:{element.precio}$
           </Card.Text>
           <Link to={`/item/${element.id}`}>ver mas</Link>

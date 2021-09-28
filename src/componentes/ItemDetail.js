@@ -28,7 +28,9 @@ const ItemDetail = ({ element,productoAgregado }) => {
       Precio:{element.precio}$
     </Card.Text>
     {finish === true ? (
-        <button><Link to="/carrito"> Ir al carrito </Link></button>&&<button><Link to="/"> Home </Link></button>
+       <> <button><Link to="/carrito"> Ir al carrito </Link></button>
+       <button><Link to="/"> Home </Link></button>
+       </>
       ) : (
         <ItemCount
           props={agregarAlCarro}
