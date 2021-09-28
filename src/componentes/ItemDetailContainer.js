@@ -5,28 +5,28 @@ import { firestore } from '../firebase';
 
 
 const  ItemDetailContainer = ()=>{
-    const [element, setElement] = useState({})
+    const [producto, setElement] = useState({})
     const {id} = useParams();
 
       useEffect(()=>{
             //PromiseEjercicio().then(res=>setElement(res.find(element=>element.id===id)))
               const db = firestore
               const collection = firestore.collection("Productos")
-              const element = collection.doc(id);
+              const element = collection.doc(id).get();
                
-            element.get(id).then((querySnapshot) => {
+               element.then((prod) => {
                   const data = {
-                    id: querySnapshot.id,
-                    ...querySnapshot.data(),
+                    id: prod.id,
+                    ...prod.data(),
                   }
-                  setElement([data]);
+                  setElement(data);
                 });
               },[id])
 
             return(
 
                     <>
-                    <ItemDetail element={element}/>
+                    <ItemDetail element={producto}/>
                     </> 
               
 
