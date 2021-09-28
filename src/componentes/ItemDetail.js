@@ -2,6 +2,8 @@ import ItemCount from "./itemCount";
 import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
 import {Link} from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button';
 
 const ItemDetail = ({ element,productoAgregado }) => {
   
@@ -18,13 +20,15 @@ const ItemDetail = ({ element,productoAgregado }) => {
  
   return (
     <div>
-      <div> {element.imagenUrl}</div>
-      <div key={element.id}>
-        <h1> {element.titulo} {element.precio}$</h1>
-      </div>
-     
-      {finish === true ? (
-        <button><Link to="/carrito"> Ir al carrito </Link></button>
+     <Card style={{ width: '14rem' }}>
+      <Card.Img variant="top" src={element.imagenUrl}/>
+      <Card.Body>
+    <Card.Title>{element.titulo} </Card.Title>
+    <Card.Text>
+      Precio:{element.precio}$
+    </Card.Text>
+    {finish === true ? (
+        <button><Link to="/carrito"> Ir al carrito </Link></button>&&<button><Link to="/"> Home </Link></button>
       ) : (
         <ItemCount
           props={agregarAlCarro}
@@ -34,6 +38,12 @@ const ItemDetail = ({ element,productoAgregado }) => {
           setFinish={setFinish}
         />
       )}
+
+
+    </Card.Body>
+    </Card>
+     
+   
     </div>
   );
 };
