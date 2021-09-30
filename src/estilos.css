@@ -1,10 +1,24 @@
 body {
-    background-color: brown;
+    background-color: rgb(163, 163, 163);
 }
 
-h1 {
-    color: rgb(250, 253, 255);
+a h1 {
+    color: rgb(0, 54, 102);
     text-decoration: none;
+}
+
+a h1:hover {
+    color: aliceblue;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    size: 12px;
+}
+
+a.cantidad {
+    color: rgb(250, 92, 0);
 }
 
 section .contenido {
@@ -17,17 +31,12 @@ section .contenido {
     box-shadow: 3px;
 }
 
-nav p {
-    color: #ffffff;
-    font-size: 20px;
-    text-decoration: none;
+.navbar {
+    font-size: 18px;
+    text-decoration: dotted;
 }
 
 i {
     color: rgb(255, 255, 255);
     font-size: 30px;
-}
-
-li {
-    color: aliceblue;
 }

@@ -6,69 +6,35 @@ import { firestore } from '../firebase';
 
 const ItemListContainer = () => {
   
-
-
-
   const [element,setElement]=useState([])
- 
   const {id} = useParams()
-  
+  const {category} = useParams()
  
 
   useEffect(()=>{    
-   
-   
     const db = firestore
     const collection = firestore.collection("Productos")
-
     const query = collection.get()
-   
-   
-   
-   
-    query.then((snapshot)=>{
+  
+    if(category){
+     
+      collection.where("categoria","===",category)
+    
+    }else{
+      
+      query.then((snapshot)=>{
              
-      
-      setElement(snapshot.docs.map(doc=>({...doc.data(),id:doc.id})))
-      
-      //const docs = snapshot.docs
-
-      //const Productos = []
-
-   /*docs.forEach((doc)=>{
-
-        const docSnapshot = doc
-        //console.log(docSnapshot.id);
-        //console.log(docSnapshot.data());
-          const Producto_id = {...docSnapshot.data(),id:docSnapshot.id}
-          Productos.push(Producto_id)
-      })*/
-
-          //setElement(Productos);
-    })
-   
-   
-   
-   
-   
-   
-   
-    /*promiseEjercicio().then(res=>{
-      if(!categoria){setElement(res)}
-      else{let filtrar=res.filter(element=>element.categoria===categoria)
-      setElement(filtrar) 
-     }
-    })*/  
-  },[id])
+        setElement(snapshot.docs.map(doc=>({...doc.data(),id:doc.id})))
+     })
+    }
+  
+  },[category])
     
   return (
         <>
           
           <ItemList element={element}/>
          
-        
-         
-
         </>
       );
 }

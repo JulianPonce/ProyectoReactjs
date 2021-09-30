@@ -20,18 +20,18 @@ const ItemDetail = ({ element,productoAgregado }) => {
  
   return (
     <div>
-     <Card style={{ width: '14rem' }}>
-      <Card.Img variant="top" src={element.imagenUrl}/>
-      <Card.Body>
-    <Card.Title>{element.titulo} </Card.Title>
-    <Card.Text>
-      Precio:{element.precio}$
-    </Card.Text>
-    {finish === true ? (
+      <Card style={{ width: '14rem' }}>
+        <Card.Img variant="top" src={element.imagenUrl}/>
+        <Card.Body>
+      <Card.Title>{element.titulo} </Card.Title>
+      <Card.Text>
+        Precio:{element.precio}$
+      </Card.Text>
+      {finish === true ? (
        <> <button><Link to="/carrito"> Ir al carrito </Link></button>
        <button><Link to="/"> Home </Link></button>
        </>
-      ) : (
+       ) : (
         <ItemCount
           props={agregarAlCarro}
           stock={4}
