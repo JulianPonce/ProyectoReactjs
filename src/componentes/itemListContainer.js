@@ -17,8 +17,18 @@ const ItemListContainer = () => {
     const query = collection.get()
   
     if(category){
+
      
-      collection.where("categoria","===",category)
+
+      collection.where("categoria","==",category).get()
+
+      .then((snapshot)=>{
+
+        setElement(snapshot.docs.map(doc=>({...doc.data(),id:doc.id})))
+
+     })
+
+    
     
     }else{
       
