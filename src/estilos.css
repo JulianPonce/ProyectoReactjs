@@ -2,7 +2,7 @@ body {
     background-color: rgb(163, 163, 163);
 }
 
-a h1 {
+a {
     color: rgb(72, 63, 153);
     text-decoration-line: none;
 }
@@ -36,7 +36,15 @@ div.container {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.cart {
+    margin-bottom: 10px;
+}
+
+.card {
+    border: solid 5px;
 }
 
 i {
@@ -53,6 +61,20 @@ div.cartimg {
 }
 
 .detail {
-    float: center;
-    background-color: rgb(177, 177, 177);
+    height: 300px;
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.preciocount {
+    background-color: rgb(163, 163, 163);
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }

@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button';
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { Container } from "react-dom";
+import ListGroup from "react-bootstrap/esm/ListGroup"
+
 
 
 const ItemDetail = ({ element,productoAgregado }) => {
@@ -23,24 +25,21 @@ const ItemDetail = ({ element,productoAgregado }) => {
   };
  
   return (
-    <div >
-    
-    
-       <Card style={{height: '14rem' }}>
-       <Card.Img variant="center"  width="180x" height="200px"  src={element.imagenUrl}/>
-       <Card.Title>{element.titulo} Precio:{element.precio}$ </Card.Title>
-    
-        <Card.Body  className="detail">
-    
-   
-       
-       <div className="descripcion">
-        <Card.Text>
-          <h4>Descripcion: {element.descripcion}</h4>
-     
-        </Card.Text>
+    <div className="detail">
+      
+      
+      <div className="detail">
+      <img src={element.imagenUrl} alt="" width="200px" height="250px" />
+      <h3> {element.titulo}</h3>
       </div>
-      {finish === true ? (
+      
+      <div className="detalles">
+      <p>{element.descripcion}</p>
+      </div>
+     
+      <div className="preciocount">
+      <h3>Precio:{element.precio}$</h3>
+        {finish === true ? (
        <> <button><Link to="/carrito"> Ir al carrito </Link></button>
        <button><Link to="/"> Home </Link></button>
        </>
@@ -53,10 +52,10 @@ const ItemDetail = ({ element,productoAgregado }) => {
           setFinish={setFinish}
         />
       )}
-    </Card.Body>
-    </Card>
-     
    
+   </div>
+ 
+    
     </div>
   );
 };

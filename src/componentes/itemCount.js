@@ -29,7 +29,7 @@ const  ItemCount = ({initial,stock,onAdd, setFinish}) => {
     
     return (  
             <div id="contador">
-                <p>contador:{contador}</p>
+                <p>Cantidad:{contador}</p>
                 <button onClick={suma}>+</button>
                 <button onClick={resta}>-</button>
                 <button onClick={agregar}>agregar</button>
