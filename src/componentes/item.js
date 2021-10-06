@@ -11,35 +11,27 @@ import Row from 'react-bootstrap/Row';
 const Item = ({element}) => {
 
    return(
-   <>
-<div >
-   
-<Row xs={1} md={2} className="g-4">
-  {Array.from({ length: 1 }).map((_, idx) => (
-    <Col>
-      <Card border="dark" style={{ width: '18rem' }}>
-        <Card.Img  variant="top" src={element.imagenUrl}/>
-        <Card.Body>
-          <Card.Title>{element.titulo}</Card.Title>
-          <Card.Text border="dark"> 
-          Precio:{element.precio}$
-          </Card.Text>
-          <Link to={`/item/${element.id}`}>ver mas</Link>
-        </Card.Body>
-      </Card>
-    </Col>
-  ))}
-</Row>
-   
-   
-   
-   
-   
- 
-</div>
-      
-      
-   </>
+
+<>
+ <div  className="cart">
+     <Row xs={1} md={2} className="g-4">
+        {Array.from({ length: 1 }).map((_, idx) => (
+          <Col>
+            <Card border="dark"  style={{ width: '14rem' }}>
+              <Card.Img  variant="top" className="cartimg" width="120px" height="250px" src={element.imagenUrl}/>
+              <Card.Body className="cartaBody">
+                <Card.Title>{element.titulo}</Card.Title>
+                <Card.Text border="dark"> 
+                Precio:{element.precio}$
+                </Card.Text>
+                <Link to={`/item/${element.id}`}>ver mas</Link>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+  </div>
+</>
    )
 }
 

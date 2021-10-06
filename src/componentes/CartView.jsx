@@ -8,19 +8,21 @@ const CartView = () => {
     <>
      <div className = "carrito">
         <h1>carrito</h1>
-        {precioTotal()}
+        
         {carrito.map((element) => {
           return (
             <>
-            <h2>{element.categoria}</h2>
+            <h3>{element.titulo}</h3>
+
             <button onClick={() => eliminarProducto(element.id)}>Borrar item</button>
             
            </>
            )
         
       })}
-      <button onClick={() => clear()}>vaciar Carrito</button>
+   
     </div>
+    <button onClick={() => clear()}>vaciar Carrito</button> <h3>Total:{precioTotal()}</h3>   
     </>
   );
 };

@@ -10,9 +10,9 @@ export const ItemList = ({element}) => {
             return (
                 element.length === 0 ? (
                     <h1> cargando... </h1>
-                ):( <ul> {
+                ):( <div className="container"> {
                     element.map((element) => (<Item element={element}/>))
-                } </ul>
+                } </div>
                 )
 )}
 
