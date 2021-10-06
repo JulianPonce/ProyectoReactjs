@@ -40,8 +40,12 @@ const ItemDetail = ({ element,productoAgregado }) => {
       <div className="preciocount">
       <h3>Precio:{element.precio}$</h3>
         {finish === true ? (
-       <> <button><Link to="/carrito"> Ir al carrito </Link></button>
-       <button><Link to="/"> Home </Link></button>
+       <> 
+       
+       <div className="botones">
+       <Button variant="dark"><Link to="/carrito"> Ir al carrito </Link></Button>{' '}
+       <Button variant="dark"><Link to="/"> Home </Link></Button>{' '}
+       </div>
        </>
        ) : (
         <ItemCount

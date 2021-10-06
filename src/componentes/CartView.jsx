@@ -12,17 +12,20 @@ const CartView = () => {
         {carrito.map((element) => {
           return (
             <>
+            <div className = "itemcarro" >
+            <img src={element.imagenUrl} alt="" width="200px" height="250px" />
             <h3>{element.titulo}</h3>
-
             <button onClick={() => eliminarProducto(element.id)}>Borrar item</button>
-            
+            </div>
            </>
            )
         
       })}
    
     </div>
+     <div className="vaciar">
     <button onClick={() => clear()}>vaciar Carrito</button> <h3>Total:{precioTotal()}</h3>   
+    </div>
     </>
   );
 };
