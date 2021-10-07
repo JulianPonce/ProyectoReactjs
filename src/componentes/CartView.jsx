@@ -12,7 +12,7 @@ const CartView = () => {
   const {id} = useParams()
   
   
-  const ordenFuncion = () => {
+  const ordenFuncion = (precioTotal) => {
 
 
         const db = firestore
@@ -28,8 +28,12 @@ const CartView = () => {
           console.log(docRef);
 
           },[id])
-
-    }
+          
+      alert("gracias por su compra de" +precioTotal+"$")
+          clear()
+    
+    
+        }
   return (
     <>
      <div className = "carrito">
