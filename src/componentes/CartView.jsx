@@ -1,9 +1,35 @@
 import { useContext } from "react";
 import { contexto } from "../contexto/CartContext";
+import {useParams} from "react-router-dom";
+import { firestore } from '../firebase';
+import { useEffect, useState } from 'react';
+
+
+
 
 const CartView = () => {
   const { precioTotal, carrito, eliminarProducto,clear } = useContext(contexto);
+  const {id} = useParams()
+  
+  
+  const ordenFuncion = () => {
 
+
+        const db = firestore
+        const collection =firestore.collection("ordenes")
+        
+        const orden = {
+          productos:carrito
+        }
+
+        const query = collection.add(orden)
+        query.then((docRef)=>{
+          
+          console.log(docRef);
+
+          },[id])
+
+    }
   return (
     <>
      <div className = "carrito">
@@ -25,6 +51,7 @@ const CartView = () => {
     </div>
      <div className="vaciar">
     <button onClick={() => clear()}>vaciar Carrito</button> <h3>Total:{precioTotal()}</h3>   
+    <button onClick={() => ordenFuncion()}>Comprar</button>
     </div>
     </>
   );

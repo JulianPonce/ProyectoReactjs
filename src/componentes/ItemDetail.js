@@ -29,8 +29,9 @@ const ItemDetail = ({ element,productoAgregado }) => {
       
       
       <div className="detail">
-      <img src={element.imagenUrl} alt="" width="200px" height="250px" />
       <h3> {element.titulo}</h3>
+      <img src={element.imagenUrl} alt="" width="200px" height="200px" />
+      
       </div>
       
       <div className="detalles">
@@ -43,9 +44,9 @@ const ItemDetail = ({ element,productoAgregado }) => {
        <> 
        
        <div className="botones">
-       <Button variant="dark"><Link to="/carrito"> Ir al carrito </Link></Button>{' '}
-       <Button variant="dark"><Link to="/"> Home </Link></Button>{' '}
-       </div>
+       <Button variant="light"><Link to="/carrito"> Ir al carrito </Link></Button> {' '}
+       <Button variant="light"><Link to="/"> Home </Link></Button> {' '}
+           </div>
        </>
        ) : (
         <ItemCount
