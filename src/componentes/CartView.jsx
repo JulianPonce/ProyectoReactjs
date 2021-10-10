@@ -3,7 +3,7 @@ import { contexto } from "../contexto/CartContext";
 import {useParams} from "react-router-dom";
 import { firestore } from '../firebase';
 import { useEffect, useState } from 'react';
-
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -12,16 +12,18 @@ const CartView = () => {
   const {id} = useParams()
   
   
-  const ordenFuncion = (precioTotal) => {
+  const ordenFuncion = () => {
 
 
         const db = firestore
         const collection =firestore.collection("ordenes")
         
         const orden = {
-          productos:carrito
+          productos:carrito,
+          
+        
         }
-
+        precioTotal()
         const query = collection.add(orden)
         query.then((docRef)=>{
           
@@ -29,34 +31,52 @@ const CartView = () => {
 
           },[id])
           
-      alert("gracias por su compra de" +precioTotal+"$")
+      alert("gracias por su compra de" +precioTotal()+"$")
           clear()
     
     
         }
-  return (
-    <>
-     <div className = "carrito">
-        <h1>carrito</h1>
+    return (
+      <>
+      <div className = "carrito">
+          <h1>carrito</h1>
+          
+          {carrito.map((element) => {
+            return (
+              <>
+              <div className = "itemcarro" >
+                  <h3 className= "titulocarro">{element.titulo}</h3>
+              <div className="bodycarrito">
+                  <img src={element.imagenUrl} alt="" width="200px" height="250px" />
+              </div>
+                 <Button className="borrarItem" onClick={() => eliminarProducto(element.id)} variant="outline-danger">Borrar item</Button>{' '}
+              </div>
         
-        {carrito.map((element) => {
-          return (
-            <>
-            <div className = "itemcarro" >
-            <img src={element.imagenUrl} alt="" width="200px" height="250px" />
-            <h3>{element.titulo}</h3>
-            <button onClick={() => eliminarProducto(element.id)}>Borrar item</button>
-            </div>
-           </>
-           )
-        
-      })}
+            </>
+            )
+          
+        })}
    
-    </div>
-     <div className="vaciar">
-    <button onClick={() => clear()}>vaciar Carrito</button> <h3>Total:{precioTotal()}</h3>   
-    <button onClick={() => ordenFuncion()}>Comprar</button>
-    </div>
+
+
+          {precioTotal() !== 0 ?(
+         <>
+          <div className="footercarro">
+       
+          <Button onClick={() => clear()} variant="dark" >Vaciar</Button>{' '}
+          <Button onClick={() => ordenFuncion(precioTotal())} variant="success">Comprar</Button>{' '}
+          <h3>Total:{precioTotal()}</h3>   
+          </div>
+          </>
+          ):(
+             <h1>No hay productos en su orden</h1>
+
+          )}
+
+      </div>
+     
+   
+   
     </>
   );
 };

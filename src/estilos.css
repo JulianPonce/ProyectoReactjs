@@ -78,3 +78,34 @@ div.cartimg {
     justify-content: center;
     align-items: center;
 }
+
+.itemcarro {
+    background-color: #ffffff;
+    display: grid;
+    margin-top: 40px;
+    border: solid 5px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.bodycarrito {
+    display: flex;
+    justify-content: center;
+}
+
+.titulocarro {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.footercarro {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.borrarItem {
+    display: grid;
+    align-items: flex-end;
+}

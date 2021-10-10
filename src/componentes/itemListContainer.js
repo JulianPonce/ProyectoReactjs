@@ -4,21 +4,24 @@ import ItemList from  "./itemList";
 import {useParams} from "react-router-dom";
 import { firestore } from '../firebase';
 
+
+
 const ItemListContainer = () => {
   
   const [element,setElement]=useState([])
   const {id} = useParams()
   const {category} = useParams()
  
-
   useEffect(()=>{    
     const db = firestore
     const collection = firestore.collection("Productos")
     const query = collection.get()
   
+    
+    
     if(category){
 
-     
+      
 
       collection.where("categoria","==",category).get()
 
