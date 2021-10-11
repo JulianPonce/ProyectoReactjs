@@ -46,10 +46,15 @@ const CartView = () => {
               <>
               <div className = "itemcarro" >
                   <h3 className= "titulocarro">{element.titulo}</h3>
+                  
               <div className="bodycarrito">
+               
+                
                   <img src={element.imagenUrl} alt="" width="200px" height="250px" />
+             
               </div>
-                 <Button className="borrarItem" onClick={() => eliminarProducto(element.id)} variant="outline-danger">Borrar item</Button>{' '}
+              <h3 className= "titulocarro">Precio: {element.precio}$</h3>
+                 <Button className="borrarItem" onClick={() => eliminarProducto(element.id)} variant="outline-dark">Borrar item</Button>{' '}
               </div>
         
             </>
@@ -62,10 +67,9 @@ const CartView = () => {
           {precioTotal() !== 0 ?(
          <>
           <div className="footercarro">
-       
-          <Button onClick={() => clear()} variant="dark" >Vaciar</Button>{' '}
+          <Button onClick={() => clear()}variant="outline-danger">Vaciar carrito</Button>{' '}
           <Button onClick={() => ordenFuncion(precioTotal())} variant="success">Comprar</Button>{' '}
-          <h3>Total:{precioTotal()}</h3>   
+          <h3>Total:{precioTotal()} $</h3>   
           </div>
           </>
           ):(

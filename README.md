@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# e-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Proyecto final para el curso de React JS de Coderhouse
 
-## Available Scripts
+## Es un proyecto e-commerce de ventas de Ropa.
 
-In the project directory, you can run:
+## La aplicación se levanta con un npm start
 
-### `npm start`
+## Librerías públicas utilizadas en el proyecto:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+##### firebase: para tener una base de datos en la nube, poder guardar datos desde el proyecto y luego consultar los mismos. Link: https://github.com/firebase/firebase-js-sdk
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### react: es el framework en donde se contruyó este proyecto. Link: https://github.com/facebook/react
 
-### `npm run build`
+##### bootstrap y react-bootstrap: se los agregó para incluir en el navbar dos dropdowns con opciones para seleccionar. Link: https://github.com/react-bootstrap/react-bootstrap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### react-router-dom: se lo incluyó en el proyecto para tener un sistema de rutas y así navegar por las distintas páginas. Link: https://github.com/ReactTraining/react-router
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Pages(Secciones) del proyecto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Home: aqui se listan todos los productos. Se puede filtrar por categoría.
 
-### `npm run eject`
+##### Detail: aqui se muestra un solo producto.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### CartView: aqui se muestran los productos que fueron agregados al carrito.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Components del proyecto:
 
-## Learn More
+##### Navbar: es el menu. Aparece en todas las páginas del proyecto.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### ItemListContainer: es el contenedor del Home.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### ItemList: en el home se accede a los datos de firebase desde aquí. Estos son enviados como props.
 
-### Code Splitting
+##### Item: recibe props del ItemList. Item se encarga de la estructura de cada item en la Home.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### ItemDetailContainer: es el contenedor del detalle del producto. A la vez, accede a la base de datos para buscar el item que coincide con el id de la url.
 
-### Analyzing the Bundle Size
+##### ItemDetail: recibe props del ItemDetailContainer. Aquí se muestra la estructura del detalle del producto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##### CartConteiner: es el contenedor del Cart. Aqui se encuentra el formulario para finalizar la compra.
 
-### Making a Progressive Web App
+##### CartItemsList: se encarga de acceder al CartContext y buscar los elementos que fueron agregados al carrito.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### CartItem: recibe props del CartItemsList. Aqui se muestra la estructura del los items agregados al carrito.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Context
+
+### Se creó solamente un context llamado CartContext. Dentro del mismo se encuentran:
+
+##### cart y setCart: se encargan del estado del carrito. cart va a visualizar todos los elementos que se agregaron al carrito.
+
+##### addItem es una función para agregar elementos al carrito.
+
+##### updateItem es una función que se encarga, dentro del carrito, de actualizar la cantidad de un productos.
+
+##### itemCount es una función que se encarga de contar cuantos productos hay en el carrito.
+
+##### totalPrice es una función que devuelve el precio total del carrito.
+
+##### removeItem es una función que se encarga de eliminar el producto seleccionado del carrito.
+
+##### clear es una función que borra todos los productos del carrito.

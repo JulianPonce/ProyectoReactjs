@@ -26,8 +26,14 @@ section.contenido {
 }
 
 .navbar {
+    display: flexbox;
     font-size: 18px;
     text-decoration: none;
+}
+
+.categoria {
+    display: grid;
+    justify-content: start;
 }
 
 div.container {
@@ -72,6 +78,12 @@ div.cartimg {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1 {
+    background-color: rgb(90, 112, 153);
+    font-family: monospace;
+    text-align: center;
+}
+
 .preciocount {
     background-color: rgb(163, 163, 163);
     display: grid;
@@ -86,6 +98,7 @@ div.cartimg {
     border: solid 5px;
     margin-left: 150px;
     margin-right: 150px;
+    border-radius: 8px;
 }
 
 .bodycarrito {
@@ -102,7 +115,7 @@ div.cartimg {
 .footercarro {
     margin: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .borrarItem {

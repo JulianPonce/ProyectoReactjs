@@ -16,7 +16,7 @@ const nav =({carrito})=>{
            <nav className="navbar ">
                        
                   <Link to="/">
-                  <h1>e-commerce</h1>
+                  <h3>e-commerce</h3>
                   </Link>
                <div className="categoria" > 
                   <DropdownButton id="dropdown-basic-button" className="categorias" title="Categorias">
