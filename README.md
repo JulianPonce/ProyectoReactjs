@@ -10,13 +10,13 @@
 
 
 
-##### firebase: para tener una base de datos en la nube, poder guardar datos desde el proyecto y luego consultar los mismos. Link: https://github.com/firebase/firebase-js-sdk
+##### firebase: para tener una base de datos en la nube, poder guardar datos desde el proyecto y luego consultar los mismos. Link: https://console.firebase.google.com/project/e-commerce-coder-75950/overview
 
-##### react: es el framework en donde se contruyó este proyecto. Link: https://github.com/facebook/react
+##### react: es el framework en donde se contruyó este proyecto. Link:https://www.npmjs.com/package/create-react-app
 
-##### bootstrap y react-bootstrap: se los agregó para incluir en el navbar dos dropdowns con opciones para seleccionar. Link: https://github.com/react-bootstrap/react-bootstrap
+##### bootstrap y react-bootstrap: se los agregó para incluir en el navbar dos dropdowns con opciones para seleccionar. Link:https://react-bootstrap.github.io/
 
-##### react-router-dom: se lo incluyó en el proyecto para tener un sistema de rutas y así navegar por las distintas páginas. Link: https://github.com/ReactTraining/react-router
+##### react-router-dom: se lo incluyó en el proyecto para tener un sistema de rutas y así navegar por las distintas páginas. Link:https://reactrouter.com/web/guides/quick-start
 
 ## Pages(Secciones) del proyecto:
 
