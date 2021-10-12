@@ -4,11 +4,8 @@ import {useParams} from "react-router-dom";
 import { firestore } from '../firebase';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
-import Row from "react-bootstrap/esm/Row";
-import Col from "react-bootstrap/esm/Col";
-import InputGroup from "react-bootstrap/esm/InputGroup"
-import FormControl from "react-bootstrap/esm/FormControl"
+import firebase from "firebase/app"
+import "firebase/firestore"
 
 
 const CartView = () => {
@@ -22,9 +19,9 @@ const CartView = () => {
         const db = firestore
         const collection =firestore.collection("ordenes")
         
-        const orden = { productos:carrito ,PrecioTotal:precioTotal() }
+        const orden = { productos:carrito ,PrecioTotal:precioTotal(), fecha:firebase.firestore.Timestamp.fromDate(new Date()) }
 
-        
+        precioTotal()
         const query = collection.add(orden)
         query.then((docRef)=>{
           

@@ -42,8 +42,9 @@
 
 ##### itemCount es un componente que se encarga de contar cuantos productos seleccionamos para agregar al  carrito.
 
-##### cartView se genero el icono del carrito dentro de nav
-
+##### cartwidget se genero el icono del carrito dentro de nav
+  
+#####  CartView es la visualizacion del carrito donde generamos la ordenFuncion donde generamos una orden de compra subida a firebase(fecha,productos,usuario).
 
 #### Se genero una hoja de css llamda estilos.css para aplicar estilos a la app
 
