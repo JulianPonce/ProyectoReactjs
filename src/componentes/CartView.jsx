@@ -4,7 +4,11 @@ import {useParams} from "react-router-dom";
 import { firestore } from '../firebase';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-
+import Form from 'react-bootstrap/Form'
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
+import InputGroup from "react-bootstrap/esm/InputGroup"
+import FormControl from "react-bootstrap/esm/FormControl"
 
 
 const CartView = () => {
@@ -18,12 +22,9 @@ const CartView = () => {
         const db = firestore
         const collection =firestore.collection("ordenes")
         
-        const orden = {
-          productos:carrito,
-          
+        const orden = { productos:carrito ,PrecioTotal:precioTotal() }
+
         
-        }
-        precioTotal()
         const query = collection.add(orden)
         query.then((docRef)=>{
           
@@ -71,6 +72,8 @@ const CartView = () => {
           <Button onClick={() => ordenFuncion(precioTotal())} variant="success">Comprar</Button>{' '}
           <h3>Total:{precioTotal()} $</h3>   
           </div>
+         
+
           </>
           ):(
              <h1>No hay productos en su orden</h1>
