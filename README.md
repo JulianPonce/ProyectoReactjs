@@ -14,15 +14,13 @@
 
 ##### react: es el framework en donde se contruyó este proyecto. Link:https://www.npmjs.com/package/create-react-app
 
-##### bootstrap y react-bootstrap: se los agregó para incluir en el navbar dos dropdowns con opciones para seleccionar. Link:https://react-bootstrap.github.io/
+##### bootstrap y react-bootstrap: se los agregó para incluir en el navbar un dropdowns con opciones para seleccionar por categorias. Link:https://react-bootstrap.github.io/
 
 ##### react-router-dom: se lo incluyó en el proyecto para tener un sistema de rutas y así navegar por las distintas páginas. Link:https://reactrouter.com/web/guides/quick-start
 
 ## Pages(Secciones) del proyecto:
 
-##### Home: aqui se listan todos los productos. Se puede filtrar por categoría.
-
-##### Detail: aqui se muestra un solo producto.
+##### itemDetail: aqui se muestra un solo producto.
 
 ##### CartView: aqui se muestran los productos que fueron agregados al carrito.
 
@@ -30,7 +28,7 @@
 
 ## Components del proyecto:
 
-##### Navbar: es el menu. Aparece en todas las páginas del proyecto.
+##### Nav: es el menu. Aparece en todas las páginas del proyecto.
 
 ##### ItemListContainer: es el contenedor del Home.
 
@@ -42,12 +40,12 @@
 
 ##### ItemDetail: recibe props del ItemDetailContainer. Aquí se muestra la estructura del detalle del producto.
 
-##### CartConteiner: es el contenedor del Cart. Aqui se encuentra el formulario para finalizar la compra.
+##### itemCount es un componente que se encarga de contar cuantos productos seleccionamos para agregar al  carrito.
 
-##### CartItemsList: se encarga de acceder al CartContext y buscar los elementos que fueron agregados al carrito.
+##### cartView se genero el icono del carrito dentro de nav
 
-##### CartItem: recibe props del CartItemsList. Aqui se muestra la estructura del los items agregados al carrito.
 
+#### Se genero una hoja de css llamda estilos.css para aplicar estilos a la app
 
 
 
@@ -57,16 +55,16 @@
 
 ### Se creó solamente un context llamado CartContext. Dentro del mismo se encuentran:
 
-##### cart y setCart: se encargan del estado del carrito. cart va a visualizar todos los elementos que se agregaron al carrito.
+##### carrito y setCarrito: se encargan del estado del carrito. cart va a visualizar todos los elementos que se agregaron al carrito.
 
-##### addItem es una función para agregar elementos al carrito.
+##### agregarAlCarrito es una función para agregar elementos al carrito.
 
 ##### updateItem es una función que se encarga, dentro del carrito, de actualizar la cantidad de un productos.
 
-##### itemCount es una función que se encarga de contar cuantos productos hay en el carrito.
+##### CantidadTotal es para identificar si se repite un producto dentro del carritp
 
-##### totalPrice es una función que devuelve el precio total del carrito.
+##### PrecioTotal es una función que devuelve el precio total del carrito.
 
-##### removeItem es una función que se encarga de eliminar el producto seleccionado del carrito.
+##### eliminarProducto  es una función que se encarga de eliminar el producto seleccionado del carrito.
 
 ##### clear es una función que borra todos los productos del carrito.
