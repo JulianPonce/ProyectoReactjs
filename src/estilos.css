@@ -29,7 +29,7 @@ section.contenido {
     display: flexbox;
     font-size: 18px;
     text-decoration: none;
-    border: solid 3px;
+    border-bottom: solid 5px;
 }
 
 .dropdown-menu {

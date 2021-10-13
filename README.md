@@ -20,7 +20,7 @@
 
 ## Pages(Secciones) del proyecto:
 
-##### itemDetail: aqui se muestra un solo producto.
+##### itemDetail: aqui se muestra un solo producto con los detalles del mismo y la opcion del count para seleccionar la cantidad de productos del mismo que el usuario quiera agregar al producto.
 
 ##### CartView: aqui se muestran los productos que fueron agregados al carrito.Se ejecuta la funcion ordenFuncion via firebase con un condicionante que obliga al usuario a llenar el form para recopilar la info en la orden de compra.Otro condicionante para mostrar el carrito solo si hay productos seleccionados es decir precioTotal !== 0.
 
