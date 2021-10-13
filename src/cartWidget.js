@@ -10,7 +10,7 @@ const CartWidget = () => {
      <>
      <Link className="cantidad" to ="/carrito">
       {cantidadTotal()}
-      <button class="fas fa-cart-arrow-down"></button>
+      <button className="fas fa-cart-arrow-down"></button>
       </Link>
       
      </>

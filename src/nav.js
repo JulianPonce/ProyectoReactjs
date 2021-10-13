@@ -1,6 +1,5 @@
 import CartWidget from "./cartWidget"
 import { Link } from "react-router-dom"
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
 
@@ -19,21 +18,25 @@ const nav =({carrito})=>{
                   <Link to="/">
                   <h3>e-commerce</h3>
                   </Link>
-               <div className="categoria" > 
-                  <DropdownButton id="dropdown-basic-button" className="categorias" title="Categorias">
-                  <Dropdown.Item ><Link to="/categoria/remera" >Remeras</Link></Dropdown.Item>
-                  <Dropdown.Item><Link to="/categoria/pantalon">Pantalon</Link></Dropdown.Item>
-                  <Dropdown.Item><Link to="/categoria/campera">Campera</Link></Dropdown.Item>
-                  <Dropdown.Item><Link to="/categoria/gorra">Gorra</Link></Dropdown.Item>   
-                  </DropdownButton>
-                </div> 
-                   <div>
-                    
-                  
-                        
-                 
-                 
+             
+                  <Dropdown className="categorias" tittle="Categorias">
+                     <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        Categortias
+                     </Dropdown.Toggle>
+
+                     <Dropdown.Menu>
+                   <div  className="categoria">
+                  <Link to="/categoria/remera" >Remeras</Link>
+                  <Link to="/categoria/pantalon">Pantalon</Link>
+                  <Link to="/categoria/campera">Campera</Link>
+                  <Link to="/categoria/gorra">Gorra</Link>
                   </div>
+                     </Dropdown.Menu>
+                </Dropdown>
+             
+             
+             
+             
                   <CartWidget/>
            </nav>
            
