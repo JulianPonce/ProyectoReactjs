@@ -38,7 +38,7 @@ const CartView = () => {
                 }
                 
                 else{
-                  alert("Complete el form para terminar la compra")
+                  alert("Complete sus datos para confirmar la compra")
                 }
               }
       

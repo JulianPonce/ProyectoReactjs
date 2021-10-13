@@ -22,8 +22,7 @@
 
 ##### itemDetail: aqui se muestra un solo producto.
 
-##### CartView: aqui se muestran los productos que fueron agregados al carrito.
-
+##### CartView: aqui se muestran los productos que fueron agregados al carrito.Se ejecuta la funcion ordenFuncion via firebase con un condicionante que obliga al usuario a llenar el form para recopilar la info en la orden de compra.Otro condicionante para mostrar el carrito solo si hay productos seleccionados es decir precioTotal !== 0.
 
 
 ## Components del proyecto:
