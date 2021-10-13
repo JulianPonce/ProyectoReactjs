@@ -2,12 +2,8 @@ import ItemCount from "./itemCount";
 import { useContext, useState } from "react";
 import { contexto } from "../contexto/CartContext";
 import {Link} from 'react-router-dom'
-import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
-import Row from "react-bootstrap/esm/Row";
-import Col from "react-bootstrap/esm/Col";
-import { Container } from "react-dom";
-import ListGroup from "react-bootstrap/esm/ListGroup"
+
 
 
 

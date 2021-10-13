@@ -26,7 +26,7 @@ const CustomProvider = ({children}) => {
                 }else{
                     setCarrito([...carrito,productoAgregado])
                 }
-            console.log(carrito);
+   
     }
 
          
@@ -58,7 +58,7 @@ const CustomProvider = ({children}) => {
         carrito.reduce((acum, element) => (acum += element.cantidad * element.precio), 
         0)
    
-    console.log(precioTotal());
+
 
     
          

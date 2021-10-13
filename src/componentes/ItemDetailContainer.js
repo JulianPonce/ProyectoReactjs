@@ -9,8 +9,7 @@ const  ItemDetailContainer = ()=>{
     const {id} = useParams();
 
       useEffect(()=>{
-            //PromiseEjercicio().then(res=>setElement(res.find(element=>element.id===id)))
-              const db = firestore
+
               const collection = firestore.collection("Productos")
               const element = collection.doc(id).get();
                

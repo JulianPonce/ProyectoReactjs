@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Nav from "./nav"
 import ItemListContainer from "./componentes/itemListContainer"
 import ItemDetailContainer from "./componentes/ItemDetailContainer"
